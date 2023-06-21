@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b80eb83e-cb9e-49b0-806a-086f1f04541f" name="Changes" comment="Fixed the problems in the links on the header" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpServers">
+    <servers>
+      <server id="c5e8cbe5-6f53-4684-8d26-7f21176091ec" name="Unnamed" />
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+    <include_path>
+      <path value="$PROJECT_DIR$/../../php" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="2P6WWBPP6Jh7jRF1Nkb07Tr8WcG" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/GM-IP-main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php.debug&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\GM-IP-main" />
+      <recent name="C:\xampp\htdocs\GM-IP-main\images" />
+      <recent name="C:\xampp\htdocs\GM-IP-main\admin\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp0\htdocs\GM-IP-main\functions" />
+      <recent name="C:\xampp0\htdocs\GM-IP-main\admin\adminPages" />
+      <recent name="C:\xampp0\htdocs\GM-IP-main\admin\adFunctions" />
+      <recent name="C:\xampp0\htdocs\GM-IP-main\img" />
+      <recent name="C:\xampp0\htdocs\GM-IP-main\JS" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b80eb83e-cb9e-49b0-806a-086f1f04541f" name="Changes" comment="" />
+      <created>1682778041284</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682778041284</updated>
+      <workItem from="1682778066642" duration="10295000" />
+      <workItem from="1683034674364" duration="7215000" />
+      <workItem from="1683050181779" duration="14946000" />
+      <workItem from="1683107009288" duration="12067000" />
+      <workItem from="1683126029762" duration="2815000" />
+      <workItem from="1683172129447" duration="1882000" />
+      <workItem from="1683195831859" duration="38601000" />
+      <workItem from="1683267475670" duration="24511000" />
+      <workItem from="1683361037502" duration="2312000" />
+      <workItem from="1683614242130" duration="443000" />
+      <workItem from="1683884148811" duration="1245000" />
+      <workItem from="1683885575083" duration="339000" />
+      <workItem from="1683886004853" duration="658000" />
+      <workItem from="1683886697675" duration="1905000" />
+      <workItem from="1684131577226" duration="8402000" />
+      <workItem from="1684356768433" duration="206000" />
+      <workItem from="1684524493512" duration="199000" />
+      <workItem from="1684737909054" duration="38522000" />
+      <workItem from="1684839113998" duration="201000" />
+      <workItem from="1684852594113" duration="27721000" />
+      <workItem from="1684951940152" duration="2509000" />
+      <workItem from="1685120896818" duration="7662000" />
+      <workItem from="1685482239858" duration="124000" />
+      <workItem from="1685694177966" duration="14015000" />
+      <workItem from="1685831282644" duration="22000" />
+      <workItem from="1685948882926" duration="27006000" />
+      <workItem from="1685981047530" duration="10684000" />
+      <workItem from="1687154214660" duration="5487000" />
+      <workItem from="1687358855307" duration="1072000" />
+    </task>
+    <task id="LOCAL-00001" summary="Grain and Mill market and Delivery System Made with HTML, CSS, Javascript, PHP and SQL">
+      <created>1685708730844</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685708730844</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fixed the problems in the links on the header">
+      <created>1687359770709</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687359770710</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Grain and Mill market and Delivery System Made with HTML, CSS, Javascript, PHP and SQL" />
+    <MESSAGE value="Fixed the problems in the links on the header" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the problems in the links on the header" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

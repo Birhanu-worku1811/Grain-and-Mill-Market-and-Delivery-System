@@ -1,0 +1,160 @@
+/* Global styles */
+body {
+    background-color: #f2f2f2;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+header img {
+    max-width: 200px;
+}
+
+/* Main */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Order info */
+.order-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.order-number, .order-date {
+    display: flex;
+    align-items: center;
+}
+
+.order-number label, .order-date label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.order-number span, .order-date span {
+    font-size: 1.2rem;
+}
+
+/* Addresses */
+.shipping-address, .billing-address {
+    margin-bottom: 20px;
+}
+
+.address {
+    margin-bottom: 10px;
+}
+
+.address h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* Payment method */
+.payment-method {
+    margin-bottom: 20px;
+}
+
+.payment-method h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* Order summary */
+.order-summary {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.order-summary th, .order-summary td {
+    padding: 10px;
+    text-align: left;
+}
+
+.order-summary th {
+    font-weight: bold;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ccc;
+}
+
+.order-summary td {
+    border-bottom: 1px solid #eee;
+}
+
+.order-summary tfoot td {
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+}
+
+/* Shipping method */
+.shipping-method {
+    margin-bottom: 20px;
+}
+
+.shipping-method h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.actions a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1abc9c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.actions a:hover {
+    background-color: #16a085;
+}
+
+.actions button {
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.actions button:hover {
+    background-color: #c0392b;
+}
+
+/* Table colors */
+.order-summary td.product-name {
+    color: #333;
+    font-weight: bold;
+}
+
+.order-summary td.product-price {
+    color: #27ae60;
+}
+
+.order-summary td.product-quantity {
+    color: #3498}

@@ -37,7 +37,7 @@
                         </div>
                     </a>
                     <?php }
-                else if (basename(dirname($_SERVER['PHP_SELF']))!=="GM-IP-main"){ ?>
+                else{ ?>
                     <a href="../index.php">
                         <img src="../img/icons/gm-logo.png">
                         <div class="logo-text">
@@ -71,7 +71,7 @@
                             if ($current_page  === "index.php"){ ?>
                                 <img src="img/icons/account.png" alt="Profile Picture">
                            <?php }
-                            else if (basename(dirname($_SERVER['PHP_SELF']))!=="GM-IP-main"){ ?>
+                            else{ ?>
                                 <img src="../img/icons/account.png" alt="Profile Picture">
                            <?php }
                             ?>
@@ -93,7 +93,7 @@
                                 <li><a href="pages/orders.php">My Orders</a></li>
                                 <li><a href="functions/userLogout.php">Log Out</a></li>
                                 <?php }
-                            else if (basename(dirname($_SERVER['PHP_SELF']))!=="GM-IP-main"){ ?>
+                            else{ ?>
                                 <li><a href="../pages/account.php">My Account</a></li>
                                 <li><a href="../pages/orders.php">My Orders</a></li>
                                 <li><a href="../functions/userLogout.php">Log Out</a></li>
@@ -110,7 +110,7 @@
                        <button style="color: green"> <a href="pages/cart.php"> Go To Cart</a></button>
                     </div>
                    <?php }
-                    else if (basename(dirname($_SERVER['PHP_SELF']))!=="GM-IP-main"){ ?>
+                    else{ ?>
                         <img src="../img/icons/shopping_cart.png">
                     <div class="dropdown-menu">
                        <button style="color: green"> <a href="../pages/cart.php"> Go To Cart</a></button>
@@ -136,7 +136,7 @@
                     <li><a href="pages/login.php">SIGN IN</a></li>
                     <?php } ?>
                    <?php }
-                    else if (basename(dirname($_SERVER['PHP_SELF']))!=="GM-IP-main"){ ?>
+                    else{ ?>
                         <li><a href="../index.php">HOME</a></li>
                         <li><a href="../pages/market.php">Market</a></li>
                         <li><a href="../pages/register.php">Register</a></li>

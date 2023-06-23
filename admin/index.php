@@ -49,6 +49,7 @@ class AdminDashboardPage
             <!-- Style Sheet -->
             <link rel="stylesheet" type="text/css" href="./css/astyle.css" />
             <!--	<link rel="stylesheet" type="text/css" href="./css/style.css" />-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
         </head>
 
         <body>
@@ -195,6 +196,37 @@ class AdminDashboardPage
                                 </tbody>
                             </table>
                         </div>
+                        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+                        <script>
+var xValues = ["Corn", "bees", "beans", "Rice", "Nec Teff"];
+var yValues = [55, 49, 44, 24, 1];  
+var barColors = [
+  "#b91d47",
+  "#00aba9",
+  "#2b5797",
+  "#e8c3b9",
+  "#1e7145",
+  "#3e7145",
+  "#2e7145"
+];
+
+new Chart("myChart", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Overall Order Rerport"
+    }
+  }
+});
+</script>
                     </div>
                 </div>
             </div>

@@ -19,7 +19,7 @@ if (isset($_POST['reply'])) {
         $mailer->Host = 'smtp.gmail.com';
         $mailer->SMTPAuth = true;
         $mailer->Username = 'python3.birhanu@gmail.com';
-        $mailer->Password = 'aaamexgdgzygzgje';
+        $mailer->Password = 'wmpttomhfdpgdgju';
         $mailer->SMTPSecure = 'ssl';
         $mailer->Port = '465';
 

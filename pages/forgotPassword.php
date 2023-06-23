@@ -56,7 +56,7 @@ class ForgotPassword
                     $this->mailer->Host = 'smtp.gmail.com';
                     $this->mailer->SMTPAuth = true;
                     $this->mailer->Username = 'python3.birhanu@gmail.com';
-                    $this->mailer->Password = 'aaamexgdgzygzgje';
+                    $this->mailer->Password = 'wmpttomhfdpgdgju';
                     $this->mailer->SMTPSecure = 'ssl';
                     $this->mailer->Port = '465';
 

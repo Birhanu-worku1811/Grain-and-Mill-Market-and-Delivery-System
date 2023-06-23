@@ -130,7 +130,7 @@ if (isset($_POST['addStock'])){
                         } else if ((int)$fetch['Quantity'] <= 200 && (int)$fetch['Quantity'] > 0) {
                             echo "አልቋል በለው";
                         } else if ((int)$fetch['Quantity'] >= 200 && (int)$fetch['Quantity'] <= 500) {
-                            echo "እያለቀ ነው Admin";
+                            echo "እያለቀ ነው";
                         } else if ((int)$fetch['Quantity'] > 500) {
                             echo "Enough";
                         }

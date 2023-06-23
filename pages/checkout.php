@@ -51,6 +51,13 @@ class Order
             $orderedProducts[$i] = $_SESSION['cart'][$i]['item_name'];
             $subtotals[$i] = $_SESSION['cart'][$i]['sub_total'];
             $quantities[$i] = $_SESSION['cart'][$i]['quantity'];
+
+            //increase order count of products
+            $productName = $orderedProducts[$i];
+            $q = $quantities[$i];
+            $query = "UPDATE products set order_count=order_count+$q, Quantity=Quantity-$q WHERE Name='$productName'";
+            mysqli_query($this->db, $query);
+
         }
 
         // Serialization of the data to insert into the database
@@ -72,11 +79,11 @@ class Order
                 $mailer->isSMTP();
                 $mailer->Host = 'smtp.gmail.com';
                 $mailer->SMTPAuth = true;
-                $mailer->Username = 'your-email@gmail.com'; // Replace with your own Gmail address
-                $mailer->Password = 'your-email-password'; // Replace with your Gmail password
+                $mailer->Username = 'python3.birhanu@gmail.com';
+                $mailer->Password = 'wmpttomhfdpgdgju';
                 $mailer->SMTPSecure = 'ssl';
                 $mailer->Port = 465;
-                $mailer->setFrom('no-reply@grainmill.com', 'Grain Mill');
+                $mailer->setFrom('python3.birhanu@gmail.com', 'Grain Mill');
                 $mailer->addAddress($recipient, $fname . ' ' . $lname);
                 $mailer->isHTML(true);
                 $mailer->Subject = 'Order Confirmation - Grain Mill';
@@ -91,10 +98,8 @@ class Order
                 ";
 
                 $mailer->send();
-                echo 'Message has been sent';
             } catch (Exception $e) {
-                echo 'Message could not be sent.';
-                echo 'Mailer Error: ' . $mailer->ErrorInfo;
+                echo "<script> alert('something didn't went as expected);</script>";
             }
 
             unset($_SESSION['cart']);

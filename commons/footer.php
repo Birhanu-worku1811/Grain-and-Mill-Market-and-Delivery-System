@@ -10,13 +10,16 @@
                 <div class="widget-content">
                     <ul>
                         <?php
-                        if (basename(dirname($_SERVER['PHP_SELF']))==="GM-IP-main"){ ?>
+                        $current_page = basename($_SERVER['PHP_SELF']);
+                        if ($current_page === "index.php"){ ?>
+                            <li><a href="index.php">Home</a></li>
                             <li><a href="pages/about.php">About</a></li>
                             <li><a href="pages/contact.php">Contact</a></li>
                             <li><a href="pages/refund.php">Refund Policy</a></li>
                             <li><a href="pages/terms.php">Terms & Conditions</a></li>
                        <?php }
                         else { ?>
+                            <li><a href="../index.php">Home</a></li>
                             <li><a href="../pages/about.php">About</a></li>
                             <li><a href="../pages/contact.php">Contact</a></li>
                             <li><a href="../pages/refund.php">Refund Policy</a></li>
@@ -33,17 +36,15 @@
                 <div class="widget-content">
                     <ul>
                         <?php
-                        if (basename(dirname($_SERVER['PHP_SELF']))!=="GM-IP-main"){ ?>
-                        <li><a href="../pages/account.php">My Account</a></li>
-                        <li><a href="../pages/orders.php">My Orders</a></li>
-                        <li><a href="../pages/cart.php">Cart</a></li>
-                        <li><a href="../pages/checkout.php">Checkout</a></li>
-                        <?php }
-                        else { ?>
-                            <li><a href="pages/account.php">My Account</a></li>
+                        if ($current_page === "index.php"){ ?>
+                        <li><a href="pages/account.php">My Account</a></li>
                         <li><a href="pages/orders.php">My Orders</a></li>
                         <li><a href="pages/cart.php">Cart</a></li>
-                        <li><a href="pages/checkout.php">Checkout</a></li>
+                        <?php }
+                        else { ?>
+                            <li><a href="../pages/account.php">My Account</a></li>
+                        <li><a href="../pages/orders.php">My Orders</a></li>
+                        <li><a href="../pages/cart.php">Cart</a></li>
                      <?php   }
                         ?>
                     </ul>
@@ -57,7 +58,7 @@
                     <div class="follow">
                         <ul>
                             <?php
-                        if (basename(dirname($_SERVER['PHP_SELF']))==="GM-IP-main"){ ?>
+                        if ($current_page === "index.php"){ ?>
                             <li><a href="#"><img src="img/icons/facebook.png"></a></li>
                             <li><a href="#"><img src="img/icons/twitter.png"></a></li>
                             <li><a href="#"><img src="img/icons/instagram.png"></a></li>
@@ -78,7 +79,11 @@
                         <form>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="subscribe" placeholder="Email">
+                                <?php if ($current_page === "index.php"){ ?>
+                                <img src="img/icons/paper_plane.png">
+                                <?php } else { ?>
                                 <img src="../img/icons/paper_plane.png">
+                                <?php } ?>
                             </div>
                         </form>
                     </div>

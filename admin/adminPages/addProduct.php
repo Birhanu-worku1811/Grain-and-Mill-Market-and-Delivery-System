@@ -279,16 +279,32 @@ mysqli_close($DB_Connector);
 
  <!--Script for the confirmation pop up-->
  <script>
+     // window.removeEventListener('click', hideOnClickOutside)
      function showConfirmation(button) {
+         document.querySelectorAll('.confirmation-popup').forEach(popup => {
+             popup.style.display = 'none';
+         })
          var confirmationPopup = button.nextElementSibling;
          confirmationPopup.style.display = "block";
 
 
          var buttonRect = button.getBoundingClientRect();
-         confirmationPopup.style.top = (buttonRect.top + buttonRect.height + 5) + "px";
+         confirmationPopup.style.top = (buttonRect.top + buttonRect.height + 100) + "px";
          confirmationPopup.style.left = (buttonRect.left - 10) + "px";
+         window.addEventListener('click', hideOnClickOutside)
      }
 
+    const confirmationPopup = document.querySelectorAll('.confirmation-popup');
+
+
+     function hideOnClickOutside(e){
+
+         if(!e.target.closest('.confirmation-popup') && !e.target.closest('.delete-btn')){
+             confirmationPopup.forEach(popup => {
+                 popup.style.display = 'none';
+             })
+         }
+     }
      function hideConfirmation(button) {
 
          var confirmationPopup = button.parentNode;

@@ -13,7 +13,7 @@ class AccountPage
 
     public function updateProfilePicture()
     {
-        $file = $_FILES['file'];
+        $file = $_FILES['profilePicture'];
         $fileName = $file['name'];
         $fileTmpName = $file['tmp_name'];
         $fileDestination = "../img/userProfile/" . $fileName;
@@ -177,7 +177,7 @@ class AccountPage
                                     <label>Profile Picture</label>
                                     <label for="cname" class="upload-button">Select Image</label>
                                     <span class="file-name"></span>
-                                    <input type="file" id="cname" name="file" accept="image/*">
+                                    <input type="file" id="cname" name="profilePicture" accept="image/*">
                                 </div>
                                 <div class="form-inline">
                                     <div class="form-group">
@@ -235,7 +235,7 @@ class AccountPage
 $accountPage = new AccountPage();
 $accountPage->displayAccount();
 
-if (isset($_POST['updateProfilePic'])) {
+if (isset($_FILES['profilePicture'])) {
     $accountPage->updateProfilePicture();
 }
 

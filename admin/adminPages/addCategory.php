@@ -13,9 +13,8 @@ include "../adFunctions/AdminSession.php";
     <title>GM - Admin</title>
     <!-- Style Sheet -->
     <link rel="stylesheet" type="text/css" href="../css/astyle.css" />
-<!--    <link rel="stylesheet" type="text/css" href="./css/style.css" />-->
+    <!--    <link rel="stylesheet" type="text/css" href="./css/style.css" />-->
 </head>
-
 
 <!--Style for the confirmation pop up-->
 <style>
@@ -70,11 +69,8 @@ include "../adFunctions/AdminSession.php";
     }
 </style>
 
-
 <body>
-
 <main>
-
     <div class="main-content">
         <div class="sidebar">
             <h3>Menu</h3>
@@ -90,13 +86,11 @@ include "../adFunctions/AdminSession.php";
             </ul>
         </div>
         <div class="content">
-            <h3>Catogory</h3>
+            <h3>Category</h3>
             <div class="content-data">
                 <div class="content-form">
-
                     <form action="addCategory.php" method="post">
                         <h4>Add Category</h4>
-
                         <?php
                         include "../adFunctions/DB_connector.php";
                         global $DB_Connector;
@@ -106,91 +100,54 @@ include "../adFunctions/AdminSession.php";
                             $read = "SELECT * FROM categories";
                             $catCheck = mysqli_query($DB_Connector, $read);
                             while($cat = mysqli_fetch_assoc($catCheck)){
-                                if ($cat['cat_name'] === $_POST['cat_name']){
-                                    return (int) $cat['ID'];
+                                if ($cat['cat_name'] === $_POST['cat_name']) {
+                                    return true;
                                 }
                             }
                             return false;
                         }
-                        if (isset($_POST["addCategory"])){
-                            $category = htmlspecialchars(stripslashes(trim($_POST["cat_name"])));
-                            $categoryId = categoryExists();
-                            if ($categoryId !== false){
-                                echo "<h2 style='color:red;'>Category already Exists with ID $categoryId</h2>";
+                        if(isset($_POST['add_category'])){
+                            if (categoryExists()){
+                                echo "<h4 style='color: red;'>Category Already Exists!</h4>";
                             } else {
-                                $add = "INSERT INTO categories (cat_name) VALUES ('$category')";
-                                $adder = mysqli_query($DB_Connector, $add);
-                                echo "<h3 style='color:green;'>Category ".$category." added successfully!</h3>";
+                                $insert = "INSERT INTO categories (cat_name) VALUES ('".$_POST['cat_name']."')";
+                                mysqli_query($DB_Connector, $insert);
+                                echo "<h4 style='color: green;'>Category Added Successfully!</h4>";
                             }
                         }
-
-//                        mysqli_close($DB_Connector);
                         ?>
-
-                        <div class="form-group">
-                                <label>Category Name</label>
-                                <input type="text" name="cat_name" required>
-                            </div>
-                        <div class="form-group">
-                            <label></label>
-                            <input type="submit" name="addCategory" value="Add Category">
-                        </div>
+                        <input type="text" name="cat_name" placeholder="Category Name" required/><br><br>
+                        <input type="submit" name="add_category" value="Add Category" />
                     </form>
-
                 </div>
-                <div class="content-detail">
-                    <h4>All Categories</h4>
-                    <form method="GET">
-                        <label for="sort-by">Sort By:</label>
-                        <select name="sort-by" id="sort-by" onchange="this.form.submit()">
-                            <option value="ID" <?php if (isset($_GET['sort-by']) && $_GET['sort-by'] === 'ID') echo 'selected'; ?>>ID</option>
-                            <option value="cat_name" <?php if (isset($_GET['sort-by']) && $_GET['sort-by'] === 'cat_name') echo 'selected'; ?>>Category Name</option>
-                        </select>
-                    </form>
+                <div class="content-table">
+                    <h4>Categories</h4>
                     <table>
                         <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>Category ID</th>
                             <th>Category Name</th>
-                            <th>Delete</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
                         <?php
-                        $limit = 8;
-                        $page = isset($_GET['page']) ? $_GET['page'] : 1;
-                        $offset = ($page - 1) * $limit;
-                        $sortColumn = isset($_GET['sort-by']) ? $_GET['sort-by'] : 'ID';
-                        $retrieve = "SELECT * FROM categories ORDER BY $sortColumn LIMIT $limit OFFSET $offset";
-                        $query = mysqli_query($DB_Connector, $retrieve);
+                        $query = mysqli_query($DB_Connector, "SELECT * FROM categories");
                         while ($fetch = mysqli_fetch_assoc($query)) {
                             echo "<tr>";
                             echo "<th>" . $fetch['ID'] . "</th>";
                             echo "<th>" . $fetch['cat_name'] . "</th>";
                             ?>
                             <th>
-                                <button class="delete-btn" onclick="showConfirmation(this)">Delete</button>
+                                <button id="delete-btn-<?php echo $fetch['ID']; ?>" class="delete-btn" onclick="showConfirmation(<?php echo $fetch['ID']; ?>)">Delete</button>
                                 <?php
                                 $toBeDeletedCatId = $fetch['ID'];
                                 $cate = $fetch['cat_name'];
-                                $proCounter = "SELECT COUNT(*) as numOfProducts FROM products WHERE Category='$cate'";
-                                $proCounterQuery = $DB_Connector->query($proCounter);
-                                $numOfItems = mysqli_fetch_assoc($proCounterQuery);
                                 ?>
-                                <div class="confirmation-popup">
-                                    <?php
-                                    if (intval($numOfItems['numOfProducts']) === 0) {
-                                        ?>
-                                        <p>Are you sure you want to delete the category <?php echo $fetch['cat_name'] ?>? There are no items of this category</p>
-                                        <?php
-                                    } else {
-                                        ?>
-                                        <p>Are you sure you want to delete the category <?php echo $fetch['cat_name'] ?>? There are <?php echo $numOfItems['numOfProducts'] ?> items of it</p>
-                                        <?php
-                                    }
-                                    ?>
-                                    <button class="confirm-btn" onclick="deleteItem()">Yes</button>
-                                    <button class="cancel-btn" onclick="hideConfirmation(this)">No</button>
+                                <div id="confirmation-popup-<?php echo $fetch['ID']; ?>" class="confirmation-popup">
+                                    <p>Are you sure you want to delete the category '<?php echo $cate; ?>'?</p>
+                                    <button class="confirm-btn" onclick="deleteItem(<?php echo $toBeDeletedCatId; ?>)">Yes</button>
+                                    <button class="cancel-btn" onclick="hideConfirmation(<?php echo $toBeDeletedCatId; ?>)">No</button>
                                 </div>
                             </th>
                             <?php
@@ -199,78 +156,38 @@ include "../adFunctions/AdminSession.php";
                         ?>
                         </tbody>
                     </table>
-                    <?php
-                    $totalRecordsQuery = "SELECT COUNT(*) AS totalRecords FROM categories";
-                    $totalRecordsResult = mysqli_query($DB_Connector, $totalRecordsQuery);
-                    $totalRecords = mysqli_fetch_assoc($totalRecordsResult)['totalRecords'];
-                    $totalPages = ceil($totalRecords / $limit);
-
-                    if ($totalPages > 1) {
-                        echo "<div class='pagination-links'>";
-
-                        if ($page > 1) {
-                            echo "<a href='?page=" . ($page - 1) . "&sort-by=$sortColumn'>Previous</a>";
-                        }
-
-                        for ($i = 1; $i <= $totalPages; $i++) {
-                            if ($i == $page) {
-                                echo "<a class='active' href='?page=$i&sort-by=$sortColumn'>$i</a>";
-                            } else {
-                                echo "<a href='?page=$i&sort-by=$sortColumn'>$i</a>";
-                            }
-                        }
-
-                        if ($page < $totalPages) {
-                            echo "<a href='?page=" . ($page + 1) . "&sort-by=$sortColumn'>Next</a>";
-                        }
-                        echo "</div>";
-                    }
-                    ?>
                 </div>
-
             </div>
         </div>
     </div>
-
-</main> <!-- Main Area -->
+</main>
 
 <!--Script for the confirmation pop up-->
 <script>
-    function showConfirmation(button) {
+    function showConfirmation(categoryId) {
         // Show the confirmation pop-up
-        var confirmationPopup = button.nextElementSibling;
+        var confirmationPopup = document.getElementById("confirmation-popup-" + categoryId);
         confirmationPopup.style.display = "block";
 
         // Position the confirmation popup relative to the button
+        var button = document.getElementById("delete-btn-" + categoryId);
         var buttonRect = button.getBoundingClientRect();
         confirmationPopup.style.top = (buttonRect.top + buttonRect.height + 5) + "px";
         confirmationPopup.style.left = (buttonRect.left - 10) + "px";
     }
 
-    function hideConfirmation(button) {
+    function hideConfirmation(categoryId) {
         // Hide the confirmation pop-up
-        var confirmationPopup = button.parentNode;
+        var confirmationPopup = document.getElementById("confirmation-popup-" + categoryId);
         confirmationPopup.style.display = "none";
     }
 
-    function deleteItem() {
+    function deleteItem(categoryId) {
         // Perform the delete action
-        window.location.href = "../adFunctions/deleteCategory.php?delete_cat_id=<?php echo $toBeDeletedCatId;?>";
+        window.location.href = "../adFunctions/deleteCategory.php?delete_cat_id=" + categoryId;
     }
 </script>
 
-<footer>
-
-    <div class="container">
-        <div class="footer-bar">
-            <div class="copyright-text">
-                <p>Proudly made by Section A Software Engineering Students.<br>
-              Copyright &copy; AASTU 2023 - All Rights Reserved.<p>
-            </div>
-        </div> <!-- Footer Bar -->
-    </div>
-</footer> <!-- Footer Area -->
-
 </body>
-
 </html>
+

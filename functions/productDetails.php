@@ -22,9 +22,9 @@
             <ul>
                 <li><a href="../index.php">Home</a></li>
                 <li> /</li>
-                <li><a href="">Shop</a></li>
+                <li><a href="../pages/market.php">Shop</a></li>
                 <li> /</li>
-                <li><a href="">Product</a></li>
+                <li>Product</li>
             </ul>
         </div> <!-- End of Breadcrumb-->
 
@@ -49,19 +49,11 @@
                 <div class="product-price">
                     <h3><?php echo $detailFetch['Price']?> ETB/Kg</h3>
                 </div>
-                <hr>
-                <p>How many Kgs?</p>
-                <hr>
+                <br><br>
                 <div class="product-cart">
                     <form id="cart-form">
                         <div class="form-group">
-                            <input type="number" class="cart-number" placeholder="KiloGrams" name="cartNumber" min="50" max="10000">
                             <a href="addToCart.php?cart_id=<?php echo $detailFetch['ID'];?>&cart_name=<?php echo $detailFetch['Name'];?>&cart_price=<?php echo $detailFetch['Price'];?>&cart_photo=<?php echo $detailFetch['Picture']?>" name="add_to_cart" style="background-color: yellow"> Add To Cart</a>
-                        </div>
-                    </form>
-                    <form id="wishlist-form">
-                        <div class="form-group">
-                            <input type="checkbox" class="wishlist" name="wishlist"> Add To Wishlist
                         </div>
                     </form>
                 </div>

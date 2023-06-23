@@ -73,34 +73,151 @@ class AdminDashboardPage
                     <h3>Dashboard</h3>
                     <div class="content-data">
                         <div class="content-detail">
+                            <h4>All Products</h4>
+                            <canvas id="allProductsChart" style="width:100%;max-width:600px"></canvas>
+                            <script>
+<!--                                products graph-->
+                                <?php
+                                $allProductsQuery = "SELECT * FROM products";
+                                $allProductsResult = mysqli_query($this->DB_Connector, $allProductsQuery);
+
+                                // Fetch data and populate xValues and yValues arrays
+                                $xValues = [];
+                                $yValues = [];
+                                while ($row = mysqli_fetch_assoc($allProductsResult)) {
+                                    $xValues[] = $row['Name'];
+                                    $yValues[] = $row['Quantity'];
+                                }
+
+                                // Convert arrays to JavaScript format
+                                $xValuesJSON = json_encode($xValues);
+                                $yValuesJSON = json_encode($yValues);
+                                ?>
+
+                                var xValues = <?php echo $xValuesJSON ?>;
+                                var yValues = <?php echo $yValuesJSON ?>;
+                                var barColors = ["#008000", "#ffff00", "#ff0000", "#e8c3b9", "#1e7145", "#3e7145", "#2e7145"];
+
+                                new Chart("allProductsChart", {
+                                    type: "bar",
+                                    data: {
+                                        labels: xValues,
+                                        datasets: [{
+                                            backgroundColor: barColors,
+                                            data: yValues
+                                        }]
+                                    },
+                                    options: {
+                                        legend: { display: false },
+                                        title: {
+                                            display: true,
+                                            text: "All available Products"
+                                        },
+                                        scales: {
+                                            yAxes: [{
+                                                ticks: {
+                                                    beginAtZero: true
+                                                }
+                                            }]
+                                        }
+                                    }
+                                });
+                            </script>
+<!--                                  PieChart-->
+                            <h4>Orders Report</h4>
+                            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+                            <script>
+                                <?php
+                                $query = "SELECT Name, order_count FROM products WHERE order_count > 0";
+                                $getOrderCount = mysqli_query($this->DB_Connector, $query);
+
+                                // Fetch data and populate xValues and yValues arrays
+                                $xValues = [];
+                                $yValues = [];
+                                while ($row = mysqli_fetch_assoc($getOrderCount)) {
+                                    $xValues[] = $row['Name'];
+                                    $yValues[] = $row['order_count'];
+                                }
+
+                                // Convert arrays to JavaScript format
+                                $xValuesJSON = json_encode($xValues);
+                                $yValuesJSON = json_encode($yValues);
+                                ?>
+
+                                var xValues = <?php echo $xValuesJSON ?>;
+                                var yValues = <?php echo $yValuesJSON ?>;
+                                var barColors = [
+                                    "#008000",
+                                    "#ffff00",
+                                    "#ff0000",
+                                    "#74c3a9",
+                                    "#1e7459",
+                                    "#4e0845",
+                                    "#2e1195"
+                                ];
+
+                                new Chart("myChart", {
+                                    type: "pie",
+                                    data: {
+                                        labels: xValues,
+                                        datasets: [{
+                                            backgroundColor: barColors,
+                                            data: yValues
+                                        }]
+                                    },
+                                    options: {
+                                        title: {
+                                            display: true,
+                                            text: "Overall Order Report"
+                                        }
+                                    }
+                                });
+                            </script>
+                        </div>
+
+                        <div class="content-detail">
                             <h4>Low Stock Report</h4>
-                            <table>
-                                <thead>
-                                <tr>
-                                    <th>Product</th>
-                                    <th>Price</th>
-                                    <th>Category</th>
-                                    <th>Qty</th>
-                                    <th>Action</th>
-                                </tr>
-                                </thead>
-                                <tbody>
+                            <canvas id="lowStockChart" style="width:100%;max-width:600px"></canvas>
+                            <script>
                                 <?php
                                 $low = $this->lowStockReport();
-                                while ($fetch = mysqli_fetch_assoc($low)) { ?>
-                                    <tr>
-                                        <?php echo "<th>" . $fetch['Name'] . "</th>";
-                                        echo "<th>" . $fetch['Price'] . "</th>";
-                                        echo "<th>" . $fetch['Category'] . "</th>";
-                                        echo "<th>" . $fetch['Quantity'] . "</th>"; ?>
-                                        <th><a href="adminPages/addStock.php?stockID=<?php echo $fetch['ID'] ?>">Add Stock</a>
-                                        </th>
-                                    </tr>
-                                    <?php
+                                $products = [];
+                                $quantities = [];
+                                while ($fetch = mysqli_fetch_assoc($low)) {
+                                    $products[] = $fetch['Name'];
+                                    $quantities[] = $fetch['Quantity'];
                                 }
                                 ?>
-                                </tbody>
-                            </table>
+
+                                var products = <?php echo json_encode($products); ?>;
+                                var quantities = <?php echo json_encode($quantities); ?>;
+                                var barColors = ["#008000", "#ffff00", "#ff0000", "#e8c3b9", "#1e7145", "#3e7145", "#2e7145"];
+
+                                new Chart("lowStockChart", {
+                                    type: "bar",
+                                    data: {
+                                        labels: products,
+                                        datasets: [{
+                                            backgroundColor: barColors,
+                                            data: quantities
+                                        }]
+                                    },
+                                    options: {
+                                        legend: { display: false },
+                                        title: {
+                                            display: true,
+                                            text: "Low Stock Report"
+                                        },
+                                        scales: {
+                                            yAxes: [{
+                                                ticks: {
+                                                    beginAtZero: true
+                                                }
+                                            }]
+                                        }
+                                    }
+                                });
+                            </script>
                             <br><br>
                             <h4>Last Three Days Orders</h4>
                             <table>
@@ -132,101 +249,6 @@ class AdminDashboardPage
                                 </tbody>
                             </table>
                         </div>
-                        <div class="content-detail">
-                            <h4>Completed Order</h4>
-                            <table>
-                                <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Order Ref#</th>
-                                    <th>Customer</th>
-                                    <th>Total Fee</th>
-                                    <th>View</th>
-                                </tr>
-                                </thead>
-
-                                <tbody>
-                                <?php
-                                $completeds = $this->completedOrder();
-                                while ($completed = mysqli_fetch_assoc($completeds)) { ?>
-                                    <tr>
-                                        <td><?php echo $completed['orderDate'] ?></td>
-                                        <td><?php echo $completed['ID'] ?></td>
-                                        <td><?php echo $completed['First_Name'] . " " . $completed['Last_Name'] ?></td>
-                                        <td><?php echo $completed['totalFee'] ?></td>
-                                        <td><a href="adFunctions/manageOrders.php?order_Id=<?php echo $completed['ID'] ?>">View</a>
-                                        </td>
-                                    </tr>
-                                <?php }
-                                ?>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="content-detail">
-                            <h4 style="color: red">Forgotten Orders/7 days or more passed but not complete!!!!</h4>
-                            <table>
-                                <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Order Ref#</th>
-                                    <th>Customer</th>
-                                    <th>totalFee</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-
-                                $today = date('Y-m-d');
-                                $threeDaysAgo = date('Y-m-d', strtotime('-3 days'));
-                                $forgottenOrders = $this->forgotenOrders();
-                                while ($forgottenOrder = mysqli_fetch_assoc($forgottenOrders)) { ?>
-                                    <tr>
-                                        <td><?php echo $forgottenOrder['orderDate'] ?></td>
-                                        <td><?php echo $forgottenOrder['ID'] ?></td>
-                                        <td><?php echo $forgottenOrder['First_Name'] . " " . $forgottenOrder['Last_Name'] ?></td>
-                                        <td><?php echo $forgottenOrder['totalFee'] ?><sub>Birr</sub></td>
-                                        <td><?php echo $forgottenOrder['status'] ?></td>
-                                        <td><a href="adFunctions/manageOrders.php?order_Id=<?php echo $forgottenOrder['ID'] ?>">Manage</a>
-                                        </td>
-                                    </tr>
-                                <?php }
-                                ?>
-                                </tbody>
-                            </table>
-                        </div>
-                        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-                        <script>
-var xValues = ["Corn", "bees", "beans", "Rice", "Nec Teff"];
-var yValues = [55, 49, 44, 24, 1];  
-var barColors = [
-  "#b91d47",
-  "#00aba9",
-  "#2b5797",
-  "#e8c3b9",
-  "#1e7145",
-  "#3e7145",
-  "#2e7145"
-];
-
-new Chart("myChart", {
-  type: "pie",
-  data: {
-    labels: xValues,
-    datasets: [{
-      backgroundColor: barColors,
-      data: yValues
-    }]
-  },
-  options: {
-    title: {
-      display: true,
-      text: "Overall Order Rerport"
-    }
-  }
-});
-</script>
                     </div>
                 </div>
             </div>

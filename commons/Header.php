@@ -129,10 +129,11 @@
                     if ($current_page  === "index.php"){ ?>
                        <li><a href="index.php">HOME</a></li>
                     <li><a href="pages/market.php">Market</a></li>
-                    <li><a href="pages/register.php">Register</a></li>
+                    <li><a href="pages/contact.php">Contact Us</a></li>
                     <?php
                     if (!isset($_SESSION['logged_in'])){
                     ?>
+                    <li><a href="pages/register.php">Register</a></li>
                     <li><a href="pages/login.php">SIGN IN</a></li>
                     <?php } ?>
                    <?php }
@@ -152,12 +153,12 @@
                 </ul>
             </div>
             <div class="search-bar">
-                <form action="<?php if (basename(dirname($_SERVER['PHP_SELF'])) === "GM-IP-main") { ?>pages/market.php<?php }
-                                else { ?> market.php<?php } ?>" method="get">
+                <form action="<?php if ($current_page === "index.php") { ?>pages/market.php<?php }
+                                else { ?>market.php<?php } ?>" method="get">
                     <div class="form-group">
                         <input type="text" class="form-control" name="search" id="searchInput" placeholder="Search products">
                         <button type="submit" name="submit" style="background: none; border: none; padding: 0;">
-                            <?php if (basename(dirname($_SERVER['PHP_SELF'])) === "GM-IP-main") { ?>
+                            <?php if ($current_page === "index.php") { ?>
                                 <img src="img/icons/search.png" id="searchIcon" alt="Search">
                             <?php } else { ?>
                                 <img src="../img/icons/search.png" id="searchIcon" alt="Search">

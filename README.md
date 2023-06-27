@@ -6,8 +6,8 @@
 >> Made with HTML, CSS and Javascript, and PHP and mysql
 >
 
-[Project Github](https://github.com/BisRyy/GM-IP) <br>
-[Project Demo (http://bisry.me/GM-IP)](http://bisry.me/GM-IP) <br>
+[Project Github](https://github.com/Birhanu-worku1811/Grain-and-Mill-Market-and-Delivery-System) <br>
+[Project Demo (gmmdaastu.great-site.net) <br>
 
 
 ## Group Members

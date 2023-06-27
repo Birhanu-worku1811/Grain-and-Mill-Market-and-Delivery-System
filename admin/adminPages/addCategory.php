@@ -112,7 +112,7 @@ include "../adFunctions/AdminSession.php";
                             } else {
                                 $insert = "INSERT INTO categories (cat_name) VALUES ('".$_POST['cat_name']."')";
                                 mysqli_query($DB_Connector, $insert);
-                                echo "<h4 style='color: green;'>Category Added Successfully!</h4>";
+                                echo "<h2 style='color: green;'>Category Added Successfully!</h2>";
                             }
                         }
                         ?>

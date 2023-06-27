@@ -4,19 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b80eb83e-cb9e-49b0-806a-086f1f04541f" name="Changes" comment="Fixed the problems in the links on the header">
+    <list default="true" id="b80eb83e-cb9e-49b0-806a-086f1f04541f" name="Changes" comment="Some changes for the hackaton">
+      <change afterPath="$PROJECT_DIR$/img/userProfile/img13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/userProfile/img16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/userProfile/lentils.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/adFunctions/replyContact.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/adFunctions/replyContact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/adminPages/addCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/adminPages/addCategory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/adminPages/addProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/adminPages/addProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/adminPages/addStock.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/adminPages/addStock.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/Header.php" beforeDir="false" afterPath="$PROJECT_DIR$/commons/Header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commons/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/commons/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/productDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions/productDetails.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/checkout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/forgotPassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/forgotPassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/uploads/product_images/Ater.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/uploads/product_images/Hulled-Sesame-Seeds__87906.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/uploads/product_images/Jasmine-Rice__85353.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/uploads/product_images/Popcorn__62655.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/uploads/product_images/Red-Quinoa__21736.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/uploads/product_images/beans.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/uploads/product_images/img6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/uploads/product_images/img7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/uploads/product_images/img8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/uploads/product_images/misr.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gmmd.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/about.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/account.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/cart.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/change-password.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/checkout.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/contact.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/forgotPassword.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/market.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/orders.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/refund.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/register.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/resetPassword.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/template.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/terms.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/verifyCode.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,23 +82,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/GM-IP-main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php.debug&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/xampp/htdocs/Grain-and-Mill-Market-and-Delivery-System",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php.debug",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Grain-and-Mill-Market-and-Delivery-System" />
+      <recent name="C:\xampp\htdocs\Grain-and-Mill-Market-and-Delivery-System\admin\uploads\product_images" />
       <recent name="C:\xampp\htdocs\GM-IP-main" />
       <recent name="C:\xampp\htdocs\GM-IP-main\images" />
       <recent name="C:\xampp\htdocs\GM-IP-main\admin\img" />
@@ -125,7 +151,10 @@
       <workItem from="1687154214660" duration="5487000" />
       <workItem from="1687358855307" duration="1072000" />
       <workItem from="1687360815477" duration="396000" />
-      <workItem from="1687515686978" duration="14111000" />
+      <workItem from="1687515686978" duration="16605000" />
+      <workItem from="1687850334091" duration="303000" />
+      <workItem from="1687888872073" duration="4014000" />
+      <workItem from="1687893779852" duration="7738000" />
     </task>
     <task id="LOCAL-00001" summary="Grain and Mill market and Delivery System Made with HTML, CSS, Javascript, PHP and SQL">
       <created>1685708730844</created>
@@ -141,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687359770710</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixed everything">
+      <created>1687530037808</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687530037808</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,7 +197,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Grain and Mill market and Delivery System Made with HTML, CSS, Javascript, PHP and SQL" />
     <MESSAGE value="Fixed the problems in the links on the header" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed the problems in the links on the header" />
+    <MESSAGE value="Fixed everything" />
+    <MESSAGE value="Some changes for the hackaton" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some changes for the hackaton" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

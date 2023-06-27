@@ -73,20 +73,20 @@ class AdminDashboardPage
                     <h3>Dashboard</h3>
                     <div class="content-data">
                         <div class="content-detail">
-                            <h4>All Products</h4>
+                            <h4>Most Sold Products</h4>
                             <canvas id="allProductsChart" style="width:100%;max-width:600px"></canvas>
                             <script>
-<!--                                products graph-->
+                                <!--                                products graph-->
                                 <?php
-                                $allProductsQuery = "SELECT * FROM products";
-                                $allProductsResult = mysqli_query($this->DB_Connector, $allProductsQuery);
+                                $sixMostSoldQuery = "SELECT Name, order_count FROM products WHERE order_count > 0 ORDER BY order_count DESC LIMIT 6";
+                                $sixMostSoldResult = mysqli_query($this->DB_Connector, $sixMostSoldQuery);
 
                                 // Fetch data and populate xValues and yValues arrays
                                 $xValues = [];
                                 $yValues = [];
-                                while ($row = mysqli_fetch_assoc($allProductsResult)) {
+                                while ($row = mysqli_fetch_assoc($sixMostSoldResult)) {
                                     $xValues[] = $row['Name'];
-                                    $yValues[] = $row['Quantity'];
+                                    $yValues[] = $row['order_count'];
                                 }
 
                                 // Convert arrays to JavaScript format
@@ -111,7 +111,7 @@ class AdminDashboardPage
                                         legend: { display: false },
                                         title: {
                                             display: true,
-                                            text: "All available Products"
+                                            text: "Most Sold Products"
                                         },
                                         scales: {
                                             yAxes: [{

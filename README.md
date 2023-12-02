@@ -7,7 +7,7 @@
 >
 
 [Project Github](https://github.com/Birhanu-worku1811/Grain-and-Mill-Market-and-Delivery-System) <br>
-[Project Demo (gmmdaastu.great-site.net) <br>
+[Project Demo (https://gmmdaastu.000webhostapp.com/) <br>
 
 
 ## Group Members
